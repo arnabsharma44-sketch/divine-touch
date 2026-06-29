@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Divine Touchh — Luxury Massage Machines | Redefine Relaxation</title>
+  <meta name="description" content="Divine Touchh — premium luxury massage chairs, leg massagers, and body massagers. Engineered for bliss. Where technology meets tranquility." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ═══ Scroll Progress Bar ═══ -->
+  <div id="scroll-progress"></div>
+
+  <!-- ═══ Page Transition Overlay ═══ -->
+  <div class="page-transition" id="pageTransition"></div>
+
+  <!-- ═══ Mobile Nav Backdrop ═══ -->
+  <div class="nav-backdrop" id="navBackdrop"></div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       NAVBAR
+       ═══════════════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="navbar__logo">
+      <svg class="navbar__logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 45,15 A 35,35 0 0,1 80,50 A 35,35 0 0,1 60,78" fill="none" stroke="var(--gold-shimmer)" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="40" cy="35" r="5" fill="var(--ivory)"/>
+        <path d="M 32,45 C 32,60 40,65 52,65 C 65,65 75,70 75,80 L 30,80 C 25,80 20,70 25,60 C 28,50 35,45 32,45 Z" fill="var(--ivory)"/>
+        <path d="M 55,48 Q 60,45 65,48 T 75,48" fill="none" stroke="var(--gold-shimmer)" stroke-width="2"/>
+        <path d="M 58,55 Q 63,52 68,55 T 78,55" fill="none" stroke="var(--gold-shimmer)" stroke-width="2"/>
+      </svg>
+      <div class="navbar__logo-text">
+        <div class="navbar__logo-title">DIVINE TOUCH</div>
+        <div class="navbar__logo-subtitle">MASSAGE CHAIR</div>
+      </div>
+    </a>
+    <ul class="navbar__links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#categories">Collection</a></li>
+      <li><a href="#why-us">Why Us</a></li>
+      <li><a href="catalogue.html">Catalogue</a></li>
+      <li><a href="#contact">Book Demo</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════
+       HERO SECTION
+       ═══════════════════════════════════════════════════════ -->
+  <section class="hero" id="home">
+    <!-- Floating decorative orbs -->
+    <div class="hero__orb hero__orb--1"></div>
+    <div class="hero__orb hero__orb--2"></div>
+    <div class="hero__orb hero__orb--3"></div>
+
+    <div class="hero__content">
+      <h1 class="hero__tagline">
+        <span class="word"><span class="word-inner">Redefine</span></span>
+        <span class="word"><span class="word-inner">Relaxation,</span></span>
+        <span class="word"><span class="word-inner">Restore</span></span>
+        <span class="word"><span class="word-inner">Your</span></span>
+        <span class="word"><span class="word-inner">Wellness</span></span>
+      </h1>
+      <p class="hero__subtitle">Where Technology Meets Tranquility</p>
+      <a href="#categories" class="hero__cta-btn">Discover Our Collection</a>
+      <div class="hero__divider"></div>
+    </div>
+
+    <!-- Decorative SVG wave at bottom -->
+    <svg class="hero__wave" viewBox="0 0 1440 120" preserveAspectRatio="none"
+         style="position:absolute;bottom:0;left:0;width:100%;height:80px;">
+      <path d="M0,80 C360,120 720,40 1080,80 C1260,100 1380,60 1440,80 L1440,120 L0,120 Z"
+            fill="var(--ivory)" opacity="0.6"/>
+      <path d="M0,90 C300,110 600,60 900,90 C1100,105 1300,70 1440,90 L1440,120 L0,120 Z"
+            fill="var(--ivory)"/>
+    </svg>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CATEGORIES
+       ═══════════════════════════════════════════════════════ -->
+  <section class="categories" id="categories">
+    <div class="section-heading reveal">
+      <h2>Our Collection</h2>
+      <p>Precision crafted wellness solutions designed to restore, revive, and rejuvenate</p>
+      <span class="section-heading__line"></span>
+    </div>
+
+    <div class="categories__grid reveal-stagger">
+      <!-- Card 1: Massage Chairs -->
+      <a href="catalogue.html#massage-chairs" class="category-card" data-page-link>
+        <div class="category-card__visual">
+          <!-- Abstract chair SVG -->
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="25" y="20" width="50" height="55" rx="12" stroke="var(--espresso)" stroke-width="2"/>
+            <rect x="30" y="75" width="12" height="15" rx="4" stroke="var(--espresso)" stroke-width="1.5"/>
+            <rect x="58" y="75" width="12" height="15" rx="4" stroke="var(--espresso)" stroke-width="1.5"/>
+            <path d="M35 35 Q50 25 65 35" stroke="var(--espresso)" stroke-width="1.5" fill="none"/>
+            <circle cx="50" cy="48" r="8" stroke="var(--espresso)" stroke-width="1.5" fill="none"/>
+          </svg>
+          <div class="category-card__overlay"><span>Explore Collection →</span></div>
+        </div>
+        <div class="category-card__info">
+          <h3>Massage Chairs</h3>
+          <p>Engineered for absolute bliss — full-body luxury seating</p>
+        </div>
+      </a>
+
+      <!-- Card 2: Leg Massagers -->
+      <a href="catalogue.html#leg-massagers" class="category-card" data-page-link>
+        <div class="category-card__visual">
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="50" cy="50" rx="30" ry="20" stroke="var(--espresso)" stroke-width="2"/>
+            <path d="M30 50 Q40 35 50 50 Q60 65 70 50" stroke="var(--espresso)" stroke-width="1.5" fill="none"/>
+            <circle cx="38" cy="42" r="4" stroke="var(--espresso)" stroke-width="1" fill="none"/>
+            <circle cx="62" cy="42" r="4" stroke="var(--espresso)" stroke-width="1" fill="none"/>
+            <path d="M20 70 L35 55 M80 70 L65 55" stroke="var(--espresso)" stroke-width="1.5"/>
+          </svg>
+          <div class="category-card__overlay"><span>Explore Collection →</span></div>
+        </div>
+        <div class="category-card__info">
+          <h3>Leg Massagers</h3>
+          <p>Targeted pressure therapy for revitalized mobility</p>
+        </div>
+      </a>
+
+      <!-- Card 3: Body Massagers -->
+      <a href="catalogue.html#body-massagers" class="category-card" data-page-link>
+        <div class="category-card__visual">
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="25" r="10" stroke="var(--espresso)" stroke-width="2" fill="none"/>
+            <path d="M50 35 L50 65" stroke="var(--espresso)" stroke-width="2"/>
+            <path d="M50 45 L30 55 M50 45 L70 55" stroke="var(--espresso)" stroke-width="1.5"/>
+            <path d="M50 65 L35 85 M50 65 L65 85" stroke="var(--espresso)" stroke-width="1.5"/>
+            <circle cx="50" cy="50" r="25" stroke="var(--espresso)" stroke-width="1" fill="none" opacity="0.3"/>
+          </svg>
+          <div class="category-card__overlay"><span>Explore Collection →</span></div>
+        </div>
+        <div class="category-card__info">
+          <h3>Body Massagers</h3>
+          <p>Deep tissue precision for whole-body restoration</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       WHY DIVINE TOUCHH
+       ═══════════════════════════════════════════════════════ -->
+  <section class="why-us" id="why-us">
+    <div class="section-heading reveal">
+      <h2>Why Divine Touchh</h2>
+      <p>Crafted with purpose, designed for distinction</p>
+      <span class="section-heading__line"></span>
+    </div>
+
+    <div class="why-us__grid reveal-stagger">
+      <!-- USP 1 -->
+      <div class="usp-block">
+        <div class="usp-block__icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+          </svg>
+        </div>
+        <h4>Premium Quality</h4>
+        <p>Meticulously sourced materials and uncompromising craftsmanship in every detail</p>
+      </div>
+
+      <!-- USP 2 -->
+      <div class="usp-block">
+        <div class="usp-block__icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z"/>
+          </svg>
+        </div>
+        <h4>Advanced Technology</h4>
+        <p>Intelligent pressure mapping and adaptive massage algorithms for personalized relief</p>
+      </div>
+
+      <!-- USP 3 -->
+      <div class="usp-block">
+        <div class="usp-block__icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5C22 12.27 18.6 15.36 13.45 20.03L12 21.35Z"/>
+          </svg>
+        </div>
+        <h4>Ergonomic Design</h4>
+        <p>Sculpted to the human form for an experience that feels intuitively natural</p>
+      </div>
+
+      <!-- USP 4 -->
+      <div class="usp-block">
+        <div class="usp-block__icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1ZM10 17L6 13L7.41 11.59L10 14.17L16.59 7.58L18 9L10 17Z"/>
+          </svg>
+        </div>
+        <h4>Trusted Wellness</h4>
+        <p>Endorsed by wellness professionals and trusted by thousands of discerning patrons</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CTA — BOOK YOUR DEMO
+       ═══════════════════════════════════════════════════════ -->
+  <section class="cta-section reveal">
+    <h2>Experience the Divine Difference</h2>
+    <p>Schedule a personal demonstration at your convenience</p>
+    <a href="#contact" class="cta-btn">Book Your Demo Now</a>
+    <div class="cta-section__phone">
+      📞 <a href="tel:+919122345678">+91 91223 45678</a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CONTACT / DEMO SECTION
+       ═══════════════════════════════════════════════════════ -->
+  <section class="contact" id="contact">
+    <div class="section-heading reveal">
+      <h2>Book Your Demo</h2>
+      <p>Get in touch with our wellness experts</p>
+      <span class="section-heading__line"></span>
+    </div>
+
+    <div class="contact__container reveal">
+      <div class="contact__info">
+        <h3>Let's Connect</h3>
+        <p>
+          Experience the transformative power of Divine Touchh in person. 
+          Our wellness consultants are ready to guide you through our 
+          premium collection and find your perfect match.
+        </p>
+        <div class="contact__phone">
+          📞 <a href="tel:+919122345678">+91 91223 45678</a>
+        </div>
+        <a href="https://wa.me/919122345678" target="_blank" rel="noopener" class="whatsapp-btn">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+
+      <form class="contact__form" onsubmit="return false;">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Enter your name" />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="+91 XXXXX XXXXX" />
+        </div>
+        <div class="form-group">
+          <label for="city">City</label>
+          <input type="text" id="city" placeholder="Your city" />
+        </div>
+        <div class="form-group">
+          <label for="preferred-time">Preferred Time</label>
+          <select id="preferred-time">
+            <option value="" disabled selected>Select a time slot</option>
+            <option value="morning">Morning (9 AM – 12 PM)</option>
+            <option value="afternoon">Afternoon (12 PM – 4 PM)</option>
+            <option value="evening">Evening (4 PM – 8 PM)</option>
+          </select>
+        </div>
+        <button type="submit" class="form-submit-btn">Request Demo</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer__brand">
+      <svg class="navbar__logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 45,15 A 35,35 0 0,1 80,50 A 35,35 0 0,1 60,78" fill="none" stroke="var(--gold-shimmer)" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="40" cy="35" r="5" fill="var(--ivory)"/>
+        <path d="M 32,45 C 32,60 40,65 52,65 C 65,65 75,70 75,80 L 30,80 C 25,80 20,70 25,60 C 28,50 35,45 32,45 Z" fill="var(--ivory)"/>
+        <path d="M 55,48 Q 60,45 65,48 T 75,48" fill="none" stroke="var(--gold-shimmer)" stroke-width="2"/>
+        <path d="M 58,55 Q 63,52 68,55 T 78,55" fill="none" stroke="var(--gold-shimmer)" stroke-width="2"/>
+      </svg>
+      <div class="navbar__logo-text">
+        <div class="navbar__logo-title">DIVINE TOUCH</div>
+        <div class="navbar__logo-subtitle">MASSAGE CHAIR</div>
+      </div>
+    </div>
+    <ul class="footer__links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="catalogue.html">Catalogue</a></li>
+      <li><a href="#why-us">Why Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="footer__divider"></div>
+    <p class="footer__watermark">Website crafted by Jinendra Banthia &nbsp;|&nbsp; 📞 +91 91244 83008</p>
+  </footer>
+
+  <!-- ═══ JavaScript ═══ -->
+  <script src="main.js"></script>
+</body>
+</html>
