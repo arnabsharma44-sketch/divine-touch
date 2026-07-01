@@ -69,7 +69,12 @@ The Divine Touch interface is built around the concept of "Premium Wellness". Ev
 
 ## 👨‍💻 Developers
 
-Website designed & developed by **Jinendra Banthia** & **Arnab Sharma**.
+Website designed & developed by:
+
+- **Jinendra Banthia**
+  - Email: jinendra.banthia.iter@gmail.com
+  - Phone: +91 9124483008
+- **Arnab Sharma**
 
 ## 📄 License
 
