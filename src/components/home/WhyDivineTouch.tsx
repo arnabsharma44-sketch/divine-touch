@@ -2,6 +2,7 @@
 
 import { Award, HeartPulse, Headphones, Sparkles } from "lucide-react";
 import SectionReveal from "@/components/shared/SectionReveal";
+import BorderGlow from "@/components/shared/BorderGlow";
 
 const benefits = [
   {
@@ -53,17 +54,28 @@ export default function WhyDivineTouch() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {benefits.map((benefit, index) => (
             <SectionReveal key={benefit.title} delay={index * 0.12}>
-              <div className="text-center group">
-                <div className="w-16 h-16 mx-auto mb-5 rounded-2xl bg-gold-500/10 border border-gold-500/20 flex items-center justify-center group-hover:bg-gold-500/20 group-hover:scale-110 transition-all duration-300">
-                  <benefit.icon className="w-7 h-7 text-gold-400" />
+              <BorderGlow 
+                edgeSensitivity={30} 
+                glowColor="255 215 0" // Gold rgb
+                backgroundColor="transparent"
+                borderRadius={20}
+                glowRadius={60}
+                glowIntensity={1}
+                animated={false}
+                className="h-full"
+              >
+                <div className="text-center group p-6 bg-charcoal-800/30 rounded-[19px] h-full border border-gold-500/10 hover:bg-charcoal-800/50 transition-colors">
+                  <div className="w-16 h-16 mx-auto mb-5 rounded-2xl bg-gold-500/10 border border-gold-500/20 flex items-center justify-center group-hover:bg-gold-500/20 group-hover:scale-110 transition-all duration-300">
+                    <benefit.icon className="w-7 h-7 text-gold-400 group-hover:rotate-12 transition-transform" />
+                  </div>
+                  <h3 className="font-heading font-semibold text-lg mb-2">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-brown-300 text-sm leading-relaxed">
+                    {benefit.description}
+                  </p>
                 </div>
-                <h3 className="font-heading font-semibold text-lg mb-2">
-                  {benefit.title}
-                </h3>
-                <p className="text-brown-300 text-sm leading-relaxed">
-                  {benefit.description}
-                </p>
-              </div>
+              </BorderGlow>
             </SectionReveal>
           ))}
         </div>

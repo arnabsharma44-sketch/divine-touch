@@ -51,7 +51,7 @@ export default function CategoryTiles() {
           Horizontal scroll strip on mobile/tablet (snap-x).
           Centered row on desktop.
         */}
-        <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-8 -mx-4 px-4 sm:mx-0 sm:px-0 lg:justify-center gap-6 sm:gap-10">
+        <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide pt-4 pb-8 -mx-4 px-4 sm:mx-0 sm:px-4 lg:justify-center gap-6 sm:gap-10">
           {categories.map((cat, index) => (
             <div 
               key={cat.slug} 

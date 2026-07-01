@@ -4,18 +4,21 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { MessageCircle, ChevronDown } from "lucide-react";
 import { getDefaultWhatsAppUrl } from "@/lib/whatsapp";
+import BlurText from "@/components/shared/BlurText";
+import CurvedLoop from "@/components/shared/CurvedLoop";
 import ImagePlaceholder from "@/components/shared/ImagePlaceholder";
+import FadeContent from "@/components/shared/FadeContent";
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-cream-50 via-cream-100 to-cream-200 min-h-[90vh] flex items-center">
+    <section className="relative overflow-hidden bg-gradient-to-br from-cream-50 via-cream-100 to-cream-200 min-h-[90vh] flex flex-col justify-center">
       {/* Decorative elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-10 w-72 h-72 bg-gold-400 rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-gold-300 rounded-full blur-3xl" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div>
@@ -29,34 +32,37 @@ export default function HeroSection() {
               </span>
             </motion.div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
-              className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-brown-900 leading-tight mb-6"
-            >
-              Elevate Your
-              <span className="text-gold-gradient block">Relaxation</span>
-              at Home & Office
-            </motion.h1>
+            <div className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-brown-900 leading-tight mb-6 flex flex-col gap-1 sm:gap-2">
+              <BlurText
+                text="Elevate Your"
+                delay={150}
+                animateBy="words"
+                direction="bottom"
+              />
+              <BlurText
+                text="Relaxation"
+                delay={450}
+                animateBy="words"
+                direction="bottom"
+                itemClassName="text-gold-gradient"
+              />
+              <BlurText
+                text="at Home & Office"
+                delay={750}
+                animateBy="words"
+                direction="bottom"
+              />
+            </div>
 
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-              className="text-brown-500 text-lg leading-relaxed mb-8 max-w-lg"
-            >
-              Discover our curated collection of premium massage chairs and
-              wellness products. Designed for those who value comfort, health,
-              and the finer things in life.
-            </motion.p>
+            <FadeContent blur duration={1200} delay={300} className="mb-8 max-w-lg">
+              <p className="text-brown-500 text-lg leading-relaxed">
+                Discover our curated collection of premium massage chairs and
+                wellness products. Designed for those who value comfort, health,
+                and the finer things in life.
+              </p>
+            </FadeContent>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.45, ease: "easeOut" }}
-              className="flex flex-col sm:flex-row gap-4"
-            >
+            <FadeContent blur duration={1200} delay={450} className="flex flex-col sm:flex-row gap-4">
               <a
                 href={getDefaultWhatsAppUrl()}
                 target="_blank"
@@ -72,7 +78,7 @@ export default function HeroSection() {
               >
                 View Products
               </Link>
-            </motion.div>
+            </FadeContent>
           </div>
 
           {/* Hero Image */}
@@ -95,12 +101,22 @@ export default function HeroSection() {
         </div>
       </div>
 
+      <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 opacity-20 pointer-events-none scale-150 rotate-[-5deg]">
+        <CurvedLoop 
+          marqueeText="PREMIUM WELLNESS ✦ LUXURY ✦ DIVINE TOUCH ✦ REJUVENATION ✦ "
+          speed={2.5}
+          curveAmount={350}
+          interactive={false}
+          className="text-brown-800"
+        />
+      </div>
+
       {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}

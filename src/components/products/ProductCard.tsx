@@ -5,6 +5,7 @@ import ImagePlaceholder from "@/components/shared/ImagePlaceholder";
 import SectionReveal from "@/components/shared/SectionReveal";
 import { Product } from "@/data/products";
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
+import BorderGlow from "@/components/shared/BorderGlow";
 
 interface ProductCardProps {
   product: Product;
@@ -12,7 +13,17 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   return (
-    <div className="group bg-white rounded-2xl border border-cream-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 flex flex-col h-full">
+    <BorderGlow
+      edgeSensitivity={30}
+      glowColor="255 215 0"
+      backgroundColor="#ffffff"
+      borderRadius={16}
+      glowRadius={50}
+      glowIntensity={1}
+      animated={false}
+      className="h-full"
+    >
+      <div className="group bg-white rounded-2xl overflow-hidden flex flex-col h-full h-[calc(100%-2px)]">
       {/* Image */}
       <Link href={`/products/${product.slug}`} className="block relative overflow-hidden">
         <ImagePlaceholder
@@ -66,6 +77,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         {/* CTA */}
         <WhatsAppButton productName={product.name} variant="compact" className="w-full justify-center" />
       </div>
-    </div>
+      </div>
+    </BorderGlow>
   );
 }
