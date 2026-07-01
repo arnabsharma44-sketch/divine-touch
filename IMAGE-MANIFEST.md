@@ -18,12 +18,24 @@ This document outlines all the image assets required to replace the placeholders
 
 ## Category Tiles (Home Page)
 
+> **Important**: These must be perfectly square (1:1 aspect ratio) so they crop perfectly into circles.
+
 | Description | Target Path | Recommended Size | Aspect Ratio |
 |---|---|---|---|
-| **Massage Chairs** | `/public/images/categories/massage-chairs.jpg` | 800 × 600px | 4:3 |
-| **Leg & Foot Massagers** | `/public/images/categories/leg-massagers.jpg` | 800 × 600px | 4:3 |
-| **Scalp Massagers** | `/public/images/categories/scalp-massagers.jpg` | 800 × 600px | 4:3 |
-| **Full Body Massagers** | `/public/images/categories/other.jpg` | 800 × 600px | 4:3 |
+| **Massage Chairs** | `/public/images/categories/massage-chairs.jpg` | 800 × 800px | 1:1 (Square) |
+| **Leg & Foot Massagers** | `/public/images/categories/leg-massagers.jpg` | 800 × 800px | 1:1 (Square) |
+| **Scalp Massagers** | `/public/images/categories/scalp-massagers.jpg` | 800 × 800px | 1:1 (Square) |
+| **Full Body Massagers** | `/public/images/categories/other.jpg` | 800 × 800px | 1:1 (Square) |
+
+## Testimonial Avatars (Home Page)
+
+> **Important**: These must be perfectly square (1:1 aspect ratio) so they crop perfectly into circles.
+
+| Description | Target Path | Recommended Size | Aspect Ratio |
+|---|---|---|---|
+| **Customer 1** | `/public/images/testimonials/customer-1.jpg` | 200 × 200px | 1:1 (Square) |
+| **Customer 2** | `/public/images/testimonials/customer-2.jpg` | 200 × 200px | 1:1 (Square) |
+| **Customer 3** | `/public/images/testimonials/customer-3.jpg` | 200 × 200px | 1:1 (Square) |
 
 ## About Page (`/about`)
 

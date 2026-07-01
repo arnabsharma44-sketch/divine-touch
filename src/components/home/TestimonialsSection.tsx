@@ -2,22 +2,26 @@
 
 import { Star } from "lucide-react";
 import SectionReveal from "@/components/shared/SectionReveal";
+import CircularMedia from "@/components/shared/CircularMedia";
 
 const testimonials = [
   {
     name: "Rajesh Kumar",
     location: "Mumbai",
     text: "The AMB 007 B is absolutely incredible. It perfectly simulates a real massage therapist. My back pain has significantly reduced since I started using it daily.",
+    imageLabel: "Customer 1",
   },
   {
     name: "Anita Desai",
     location: "Delhi",
     text: "I bought the foot massager for my parents and they love it. The quality is exceptional and the customer service from Divine Touch was very helpful.",
+    imageLabel: "Customer 2",
   },
   {
     name: "Vikram Singh",
     location: "Bangalore",
     text: "We installed two of the AM 006 B models in our office relaxation room. The team uses them constantly. Best investment we've made for employee wellness.",
+    imageLabel: "Customer 3",
   },
 ];
 
@@ -40,27 +44,28 @@ export default function TestimonialsSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <SectionReveal key={index} delay={index * 0.1}>
-              <div className="bg-white p-8 rounded-2xl shadow-sm border border-cream-200 relative">
+              <div className="bg-white p-8 rounded-2xl shadow-sm border border-cream-200 relative h-full flex flex-col">
                 {/* Quote Icon */}
                 <div className="text-gold-300 text-6xl font-heading absolute top-4 left-6 opacity-40">
                   &quot;
                 </div>
                 
-                <div className="relative z-10">
+                <div className="relative z-10 flex flex-col flex-1">
                   <div className="flex gap-1 mb-6">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-4 h-4 fill-gold-500 text-gold-500" />
                     ))}
                   </div>
                   
-                  <p className="text-brown-700 italic mb-6 leading-relaxed">
+                  <p className="text-brown-700 italic mb-6 leading-relaxed flex-1">
                     "{testimonial.text}"
                   </p>
                   
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-full bg-cream-200 flex items-center justify-center font-heading font-bold text-brown-900">
-                      {testimonial.name.charAt(0)}
-                    </div>
+                  <div className="flex items-center gap-4 mt-auto">
+                    <CircularMedia 
+                      label={testimonial.imageLabel} 
+                      sizeClass="w-14 h-14" 
+                    />
                     <div>
                       <h4 className="font-heading font-semibold text-brown-900">
                         {testimonial.name}

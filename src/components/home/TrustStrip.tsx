@@ -33,9 +33,9 @@ export default function TrustStrip() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {trustItems.map((item, index) => (
             <SectionReveal key={item.title} delay={index * 0.1}>
-              <div className="flex flex-col items-center text-center gap-3 group">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold-300/30 to-gold-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <item.icon className="w-6 h-6 text-gold-600" />
+              <div className="flex flex-col items-center text-center gap-4 group">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-gold-500 bg-cream-100 flex items-center justify-center group-hover:bg-gold-500/10 group-hover:border-gold-400 group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-gold-500/10 transition-all duration-300">
+                  <item.icon className="w-6 h-6 sm:w-8 sm:h-8 text-gold-600 group-hover:text-gold-500 transition-colors" />
                 </div>
                 <div>
                   <h3 className="font-heading font-semibold text-brown-900 text-sm sm:text-base">
