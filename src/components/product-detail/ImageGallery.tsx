@@ -28,6 +28,8 @@ export default function ImageGallery({ images, productName }: ImageGalleryProps)
             transition={{ duration: 0.3 }}
           >
             <ImagePlaceholder
+              src={images[activeIndex]?.src}
+              alt={images[activeIndex]?.alt}
               label={images[activeIndex]?.label || `${productName} Image`}
               aspectRatio="1/1"
               size="lg"
@@ -50,6 +52,8 @@ export default function ImageGallery({ images, productName }: ImageGalleryProps)
               }`}
             >
               <ImagePlaceholder
+                src={img.src}
+                alt={img.alt}
                 label={`Thumb ${index + 1}`}
                 aspectRatio="1/1"
                 size="sm"

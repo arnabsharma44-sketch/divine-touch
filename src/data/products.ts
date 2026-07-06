@@ -138,12 +138,12 @@ export const products: Product[] = [
       "The AM 444 N offers 4D massage technology for a lifelike massage experience with customizable pressure and speed.",
     images: [
       {
-        src: "/images/products/am-444-n/front.jpg",
+        src: "/images/products/am-444-n/frontv2.jpg",
         alt: "AM 444 N Massage Chair - Front View",
         label: "AM 444 N — front angle",
       },
       {
-        src: "/images/products/am-444-n/side.jpg",
+        src: "/images/products/am-444-n/sidev1.jpg",
         alt: "AM 444 N Massage Chair - Side View",
         label: "AM 444 N — side angle",
       },
@@ -237,12 +237,12 @@ export const products: Product[] = [
       "The AM 6666 is our flagship luxury model featuring a dual-core massage engine and full-body stretch function for the ultimate relaxation experience.",
     images: [
       {
-        src: "/images/products/am-6666/front.jpg",
+        src: "/images/products/am-6666/frontv1.jpg",
         alt: "AM 6666 Massage Chair - Front View",
         label: "AM 6666 — front angle",
       },
       {
-        src: "/images/products/am-6666/side.jpg",
+        src: "/images/products/am-6666/sidev2.jpg",
         alt: "AM 6666 Massage Chair - Side View",
         label: "AM 6666 — side angle",
       },
