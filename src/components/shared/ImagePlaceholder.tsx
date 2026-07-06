@@ -1,8 +1,11 @@
 "use client";
 
 import { Camera } from "lucide-react";
+import Image from "next/image";
 
 interface ImagePlaceholderProps {
+  src?: string;
+  alt?: string;
   label: string;
   aspectRatio?: string;
   className?: string;
@@ -10,6 +13,8 @@ interface ImagePlaceholderProps {
 }
 
 export default function ImagePlaceholder({
+  src,
+  alt,
   label,
   aspectRatio = "1/1",
   className = "",
@@ -20,6 +25,19 @@ export default function ImagePlaceholder({
     md: "text-sm",
     lg: "text-base",
   };
+
+  if (src && !src.includes("Placeholder")) {
+    return (
+      <div className={`relative overflow-hidden ${className}`} style={{ aspectRatio }}>
+        <Image
+          src={src}
+          alt={alt || label}
+          fill
+          className="object-cover"
+        />
+      </div>
+    );
+  }
 
   return (
     <div

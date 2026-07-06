@@ -81,11 +81,10 @@ export default function GalleryGrid() {
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                  activeCategory === category
+                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${activeCategory === category
                     ? "bg-gold-500 text-white shadow-md"
                     : "bg-cream-100 text-brown-600 hover:bg-cream-200"
-                }`}
+                  }`}
               >
                 {category}
               </button>
@@ -104,9 +103,8 @@ export default function GalleryGrid() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className={`relative group rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 inline-block w-full break-inside-avoid ${
-                  item.size === 'large' ? 'h-96' : item.size === 'medium' ? 'h-72' : 'h-64'
-                }`}
+                className={`relative group rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 inline-block w-full break-inside-avoid ${item.size === 'large' ? 'h-96' : item.size === 'medium' ? 'h-72' : 'h-64'
+                  }`}
                 onClick={() => setSelectedImage(item.image)}
               >
                 <div className="absolute inset-0 bg-brown-900/20 group-hover:bg-brown-900/40 transition-colors duration-300 z-10" />
