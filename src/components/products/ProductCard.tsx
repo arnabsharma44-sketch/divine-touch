@@ -30,7 +30,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           src={product.images[0]?.src}
           alt={product.images[0]?.alt}
           label={product.images[0]?.label || `${product.name} — front`}
-          aspectRatio="1/1"
+          aspectRatio="875/1020"
           className="group-hover:scale-105 transition-transform duration-700"
         />
         {product.isSample && (

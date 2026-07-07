@@ -31,7 +31,7 @@ export default function ImageGallery({ images, productName }: ImageGalleryProps)
               src={images[activeIndex]?.src}
               alt={images[activeIndex]?.alt}
               label={images[activeIndex]?.label || `${productName} Image`}
-              aspectRatio="1/1"
+              aspectRatio="875/1020"
               size="lg"
             />
           </motion.div>
@@ -55,7 +55,7 @@ export default function ImageGallery({ images, productName }: ImageGalleryProps)
                 src={img.src}
                 alt={img.alt}
                 label={`Thumb ${index + 1}`}
-                aspectRatio="1/1"
+                aspectRatio="770/1056"
                 size="sm"
               />
             </button>
