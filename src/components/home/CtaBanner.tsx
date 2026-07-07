@@ -15,8 +15,9 @@ export default function CtaBanner() {
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <SectionReveal>
-          <h2 className="font-heading text-4xl sm:text-5xl font-bold text-cream-50 mb-6">
-            Ready to Experience <br className="hidden sm:block" />
+          <h2 className="font-heading text-4xl sm:text-5xl font-bold mb-6">
+            <span className="text-cream-100">Ready to Experience</span>{' '}
+            <br className="hidden sm:block" />
             <span className="text-gold-gradient">True Relaxation?</span>
           </h2>
           <p className="text-cream-200 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
