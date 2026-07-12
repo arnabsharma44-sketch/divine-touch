@@ -7,38 +7,18 @@ import GalleryGrid from "@/components/gallery/GalleryGrid";
 
 const InfiniteMenu = dynamic(() => import("@/components/shared/InfiniteMenu"), { ssr: false });
 
-const items = [
-  {
-    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=600&auto=format&fit=crop',
-    link: '/products/am-006-b',
-    title: 'Relax',
-    description: 'Find inner peace with our massage chairs.'
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=600&auto=format&fit=crop',
-    link: '/products/amb-007-b',
-    title: 'Comfort',
-    description: 'Ultimate support for your body.'
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=600&auto=format&fit=crop',
-    link: '/products/am-009',
-    title: 'Rejuvenate',
-    description: 'Renew your spirit and energy.'
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=600&auto=format&fit=crop',
-    link: '/',
-    title: 'Zen',
-    description: 'Balance and harmony in your home.'
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=600&auto=format&fit=crop',
-    link: '/products',
-    title: 'Relief',
-    description: 'Soothe your tired muscles.'
-  }
-];
+import { products } from "@/data/products";
+
+// Take the first 5 products for the 3D Hero Menu
+const items = products
+  .filter(p => p.images && p.images.length > 0)
+  .slice(0, 5)
+  .map(p => ({
+    image: p.images[0].src,
+    link: `/products/${p.slug}`,
+    title: p.name.split(' ')[0], // Keep title short for the menu
+    description: p.name
+  }));
 
 export default function GalleryPage() {
   return (
