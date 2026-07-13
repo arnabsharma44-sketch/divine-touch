@@ -72,9 +72,9 @@ export const products: Product[] = [
       "The AM 006 B brings professional-grade massage therapy to your home with advanced 3D rollers and intelligent body scanning.",
     images: [
       {
-        src: "/images/products/am-006-b/front.jpg",
-        alt: "AM 006 B Massage Chair - Front View",
-        label: "AM 006 B — front angle",
+        src: "/images/products/am-006-b/detail.jpg",
+        alt: "AM 006 B Massage Chair - Detail",
+        label: "AM 006 B — detail view",
       },
       {
         src: "/images/products/am-006-b/side.jpg",
@@ -82,9 +82,9 @@ export const products: Product[] = [
         label: "AM 006 B — side angle",
       },
       {
-        src: "/images/products/am-006-b/detail.jpg",
-        alt: "AM 006 B Massage Chair - Detail",
-        label: "AM 006 B — detail view",
+        src: "/images/products/am-006-b/front.jpg",
+        alt: "AM 006 B Massage Chair - Front View",
+        label: "AM 006 B — front angle",
       },
     ],
     featured: true,

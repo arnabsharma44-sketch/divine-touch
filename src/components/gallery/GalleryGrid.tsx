@@ -1,60 +1,40 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import FadeContent from "@/components/shared/FadeContent";
-import Image from "next/image";
-
-const categories = ["All", "Massage Chairs", "Leg Massagers", "Accessories"];
-
-const galleryItems = [
-  {
-    id: 1,
-    title: "AM-006-B Chair",
-    category: "Massage Chairs",
-    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop",
-    size: "large"
-  },
-  {
-    id: 2,
-    title: "Leg Massager Pro",
-    category: "Leg Massagers",
-    image: "https://6a551c6135c84f09d233f302.imgix.net/sandbox/1870.jpg",
-    size: "small"
-  },
-  {
-    id: 3,
-    title: "AMB-007-B",
-    category: "Massage Chairs",
-    image: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=800&auto=format&fit=crop",
-    size: "medium"
-  },
-  {
-    id: 4,
-    title: "Sample Foot Massager",
-    category: "Leg Massagers",
-    image: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=800&auto=format&fit=crop",
-    size: "medium"
-  },
-  {
-    id: 5,
-    title: "Sample Foot Massager2",
-    category: "Leg Massagers",
-    image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop",
-    size: "small"
-  },
-  {
-    id: 6,
-    title: "AM-888",
-    category: "Massage Chairs",
-    image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800&auto=format&fit=crop",
-    size: "large"
-  }
-];
+import { products } from "@/data/products";
 
 export default function GalleryGrid() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  // Generate unique formatted categories
+  const categories = useMemo(() => {
+    const cats = new Set(products.map(p => 
+      p.category.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
+    ));
+    return ["All", ...Array.from(cats)];
+  }, []);
+
+  // Generate gallery items from all product images
+  const galleryItems = useMemo(() => {
+    return products.flatMap((product, pIndex) => 
+      product.images.map((img, iIndex) => {
+        // Create an alternating size pattern for the masonry grid
+        const sizePattern = ["large", "medium", "small", "medium"];
+        const size = sizePattern[(pIndex + iIndex) % sizePattern.length];
+        
+        return {
+          id: `${product.id}-${iIndex}`,
+          title: product.name,
+          category: product.category.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '),
+          image: img.src,
+          size: size
+        };
+      })
+    );
+  }, []);
 
   const filteredItems = galleryItems.filter(
     item => activeCategory === "All" || item.category === activeCategory

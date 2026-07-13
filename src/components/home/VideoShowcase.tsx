@@ -38,7 +38,7 @@ export default function VideoShowcase() {
             {/* Parallax Background Image */}
             <motion.div style={{ y }} className="absolute inset-0 w-full h-[120%] -top-[10%]">
               <img
-                src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1600&auto=format&fit=crop"
+                src="/images/products/am-006-b/side.jpg"
                 alt="Divine Touch Massage Chair Experience"
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
               />

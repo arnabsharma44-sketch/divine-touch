@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { MessageCircle, ChevronDown } from "lucide-react";
 import { getDefaultWhatsAppUrl } from "@/lib/whatsapp";
@@ -10,6 +11,15 @@ import ImagePlaceholder from "@/components/shared/ImagePlaceholder";
 import FadeContent from "@/components/shared/FadeContent";
 
 export default function HeroSection() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev === 0 ? 1 : 0));
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-cream-50 via-cream-100 to-cream-200 min-h-[90vh] flex flex-col justify-center">
       {/* Decorative elements */}
@@ -81,21 +91,75 @@ export default function HeroSection() {
             </FadeContent>
           </div>
 
-          {/* Hero Image */}
+          {/* Hero Image & Offer Carousel */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, x: 30 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
             className="relative"
           >
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-br from-gold-300/30 to-gold-500/20 rounded-3xl blur-2xl" />
-              <ImagePlaceholder
-                label="Hero — Premium massage chair lifestyle"
-                aspectRatio="4/3"
-                size="lg"
-                className="relative z-10"
-              />
+            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden group">
+              <div className="absolute -inset-4 bg-gradient-to-br from-gold-300/30 to-gold-500/20 blur-2xl pointer-events-none" />
+              
+              <AnimatePresence mode="wait">
+                {currentSlide === 0 ? (
+                  <motion.div
+                    key="slide-1"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="absolute inset-0 z-10"
+                  >
+                    <ImagePlaceholder
+                      label="Hero — Premium massage chair lifestyle"
+                      aspectRatio="4/3"
+                      size="lg"
+                      className="w-full h-full object-cover"
+                    />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="slide-2"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="absolute inset-0 z-10 bg-brown-900 flex items-center justify-center p-6 sm:p-8"
+                  >
+                    {/* Background subtle image */}
+                    <div className="absolute inset-0 opacity-40 mix-blend-overlay bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200')] bg-cover bg-center" />
+                    
+                    {/* Frosted Glass Offer Card */}
+                    <div className="relative z-20 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 sm:p-8 w-full max-w-sm text-center shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
+                      <span className="inline-block text-gold-400 font-semibold tracking-wider uppercase text-xs mb-3 border border-gold-400/30 px-3 py-1 rounded-full bg-gold-900/20">
+                        Seasonal Event
+                      </span>
+                      <h3 className="text-3xl sm:text-4xl font-bold text-white mb-3 tracking-tight">Save ₹20,000</h3>
+                      <p className="text-cream-100 text-sm sm:text-base mb-6 leading-relaxed">
+                        On the new AM 006 B series.<br/> Experience ultimate relaxation today.
+                      </p>
+                      <button className="bg-gradient-to-r from-gold-400 to-gold-600 hover:from-gold-300 hover:to-gold-500 text-brown-950 font-bold py-3 px-8 rounded-full w-full transition-all hover:scale-105 hover:shadow-lg shadow-gold-500/20">
+                        Claim Offer
+                      </button>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              {/* Carousel Indicators */}
+              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex gap-2">
+                <button
+                  onClick={() => setCurrentSlide(0)}
+                  className={`h-2 rounded-full transition-all duration-300 ${currentSlide === 0 ? "w-8 bg-gold-500" : "w-2 bg-white/50 hover:bg-white/80"}`}
+                  aria-label="View Lifestyle Image"
+                />
+                <button
+                  onClick={() => setCurrentSlide(1)}
+                  className={`h-2 rounded-full transition-all duration-300 ${currentSlide === 1 ? "w-8 bg-gold-500" : "w-2 bg-white/50 hover:bg-white/80"}`}
+                  aria-label="View Special Offer"
+                />
+              </div>
             </div>
           </motion.div>
         </div>

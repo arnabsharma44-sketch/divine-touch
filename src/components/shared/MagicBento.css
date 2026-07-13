@@ -77,7 +77,8 @@
   font-weight: 600;
   font-size: 24px;
   margin: 0 0 0.25em;
-  font-family: var(--font-cormorant), serif;
+  font-family: var(--font-heading), serif;
+  color: #fff;
 }
 
 .magic-bento-card__description {
