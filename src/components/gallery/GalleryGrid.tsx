@@ -94,10 +94,10 @@ export default function GalleryGrid() {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute bottom-0 left-0 w-full p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-20">
-                  <span className="text-gold-400 text-xs font-bold uppercase tracking-wider mb-1 block">
+                  <span className="text-xs font-bold uppercase tracking-wider mb-1 block" style={{ color: "#F59E0B" }}>
                     {item.category}
                   </span>
-                  <h3 className="text-white font-heading text-xl font-bold drop-shadow-md">
+                  <h3 className="font-heading text-xl font-bold drop-shadow-md" style={{ color: "#F59E0B" }}>
                     {item.title}
                   </h3>
                 </div>

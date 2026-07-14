@@ -46,7 +46,7 @@ export default function WhyDivineTouch() {
             <span className="text-gold-400 font-medium text-sm tracking-widest uppercase">
               Why Choose Us
             </span>
-            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-cream-50 mt-2">
+            <h2 className="font-heading text-3xl sm:text-4xl font-bold mt-2" style={{ color: "#C9996B" }}>
               Why Divine Touch
             </h2>
             <div className="w-16 h-0.5 bg-gold-500 mx-auto mt-4" />

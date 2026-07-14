@@ -259,9 +259,9 @@ export const products: Product[] = [
   // LEG MASSAGERS (sample placeholders)
   // ═══════════════════════════════════════
   {
-    id: "sample-leg-1",
-    name: "Sample Leg Massager 1",
-    slug: "sample-leg-massager-1",
+    id: "sample-leg-massager",
+    name: "Sample Leg Massager",
+    slug: "sample-leg-massager",
     category: "leg-massagers",
     price: null,
     specs: [
@@ -272,30 +272,30 @@ export const products: Product[] = [
     ],
     images: [
       {
-        src: "/images/products/sample-leg-1/front.jpg",
-        alt: "Sample Leg Massager 1",
-        label: "Sample Leg Massager 1 — front",
+        src: "/images/products/sample leg massager/sample leg massager.jpg",
+        alt: "Sample Leg Massager",
+        label: "Sample Leg Massager — front",
       },
     ],
     isSample: true,
   },
   {
-    id: "sample-leg-2",
-    name: "Sample Leg Massager 2",
-    slug: "sample-leg-massager-2",
-    category: "leg-massagers",
+    id: "sample-back-massager",
+    name: "Sample Back Massager",
+    slug: "sample-back-massager",
+    category: "other-massage-products",
     price: null,
     specs: [
-      "Knee and calf massage",
+      "Deep tissue back massage",
       "Multiple vibration modes",
-      "Ergonomic wrap-around design",
+      "Ergonomic design",
       "Rechargeable battery",
     ],
     images: [
       {
-        src: "/images/products/sample-leg-2/front.jpg",
-        alt: "Sample Leg Massager 2",
-        label: "Sample Leg Massager 2 — front",
+        src: "/images/products/sample back massager/sample back massager.jpg",
+        alt: "Sample Back Massager",
+        label: "Sample Back Massager — front",
       },
     ],
     isSample: true,
@@ -305,9 +305,9 @@ export const products: Product[] = [
   // FOOT MASSAGERS (sample placeholders)
   // ═══════════════════════════════════════
   {
-    id: "sample-foot-1",
-    name: "Sample Foot Massager 1",
-    slug: "sample-foot-massager-1",
+    id: "sample-foot-massager",
+    name: "Sample Foot Massager",
+    slug: "sample-foot-massager",
     category: "foot-massagers",
     price: null,
     specs: [
@@ -318,30 +318,30 @@ export const products: Product[] = [
     ],
     images: [
       {
-        src: "/images/products/sample-foot-1/front.jpg",
-        alt: "Sample Foot Massager 1",
-        label: "Sample Foot Massager 1 — front",
+        src: "/images/products/sample foot massager/sample foot massager.jpg",
+        alt: "Sample Foot Massager",
+        label: "Sample Foot Massager — front",
       },
     ],
     isSample: true,
   },
   {
-    id: "sample-foot-2",
-    name: "Sample Foot Massager 2",
-    slug: "sample-foot-massager-2",
-    category: "foot-massagers",
+    id: "sample-neck-massager",
+    name: "Sample Neck Massager",
+    slug: "sample-neck-massager",
+    category: "other-massage-products",
     price: null,
     specs: [
-      "Electric foot spa massager",
-      "Water-resistant design",
+      "Ergonomic neck wrap",
+      "Heat therapy",
       "Vibration and rolling massage",
       "Timer function",
     ],
     images: [
       {
-        src: "/images/products/sample-foot-2/front.jpg",
-        alt: "Sample Foot Massager 2",
-        label: "Sample Foot Massager 2 — front",
+        src: "/images/products/sample neck massager/sample neck massager.jpg",
+        alt: "Sample Neck Massager",
+        label: "Sample Neck Massager — front",
       },
     ],
     isSample: true,
@@ -364,7 +364,7 @@ export const products: Product[] = [
     ],
     images: [
       {
-        src: "/images/products/sample-scalp-1/front.jpg",
+        src: "/images/products/sample scalp massager 1/scalp massager.jpg",
         alt: "Sample Scalp Massager 1",
         label: "Sample Scalp Massager 1 — front",
       },
@@ -372,22 +372,22 @@ export const products: Product[] = [
     isSample: true,
   },
   {
-    id: "sample-scalp-2",
-    name: "Sample Scalp Massager 2",
-    slug: "sample-scalp-massager-2",
+    id: "sample-eye-massager",
+    name: "Sample Eye Massager",
+    slug: "sample-eye-massager",
     category: "scalp-massagers",
     price: null,
     specs: [
-      "Vibrating scalp massager",
+      "Vibrating eye massager",
       "Promotes blood circulation",
-      "Lightweight ergonomic grip",
+      "Lightweight ergonomic design",
       "Battery operated",
     ],
     images: [
       {
-        src: "/images/products/sample-scalp-2/front.jpg",
-        alt: "Sample Scalp Massager 2",
-        label: "Sample Scalp Massager 2 — front",
+        src: "/images/products/sample eye massager 2/eye massager.jpg",
+        alt: "Sample Eye Massager",
+        label: "Sample Eye Massager — front",
       },
     ],
     isSample: true,

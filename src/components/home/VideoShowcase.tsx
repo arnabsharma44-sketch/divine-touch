@@ -24,7 +24,7 @@ export default function VideoShowcase() {
             <span className="text-gold-400 font-medium text-sm tracking-widest uppercase">
               The Experience
             </span>
-            <h2 className="font-heading text-4xl sm:text-5xl font-bold text-cream-50 mt-4 drop-shadow-md">
+            <h2 className="font-heading text-4xl sm:text-5xl font-bold mt-4 drop-shadow-md" style={{ color: "#C9996B" }}>
               See the Divine Touch in Action
             </h2>
           </div>
