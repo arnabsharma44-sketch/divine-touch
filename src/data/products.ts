@@ -39,17 +39,17 @@ export const products: Product[] = [
       "Experience complete relaxation with the AMB 007 B premium massage chair. Designed for full-body comfort with advanced massage technology.",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=80",
+        src: "/images/products/amb-007-b/front.jpg",
         alt: "AMB 007 B Massage Chair - Front View",
         label: "AMB 007 B — front angle",
       },
       {
-        src: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&q=80",
+        src: "/images/products/amb-007-b/side.jpg",
         alt: "AMB 007 B Massage Chair - Side View",
         label: "AMB 007 B — side angle",
       },
       {
-        src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80",
+        src: "/images/products/amb-007-b/detail.jpg",
         alt: "AMB 007 B Massage Chair - Detail",
         label: "AMB 007 B — detail view",
       },
