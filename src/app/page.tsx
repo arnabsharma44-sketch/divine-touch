@@ -13,9 +13,9 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <HeroSection />
-      <TrustStrip />
       <ProductCarousel />
       <CategoryTiles />
+      <TrustStrip />
       <WhyDivineTouch />
       <VideoShowcase />
       <TestimonialsSection />
