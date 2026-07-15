@@ -92,13 +92,19 @@ main.sphere-main {
   background: transparent;
   overflow: hidden;
   backface-visibility: hidden;
-  transition: transform 300ms;
+  transition: transform 300ms ease, box-shadow 300ms ease;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
   pointer-events: auto;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
+}
+
+.item__image:hover {
+  transform: translateZ(30px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  z-index: 10;
 }
 
 .item__image:focus {
@@ -112,6 +118,11 @@ main.sphere-main {
   pointer-events: none;
   backface-visibility: hidden;
   filter: var(--image-filter, none);
+  transition: transform 500ms ease;
+}
+
+.item__image:hover img {
+  transform: scale(1.1);
 }
 
 .viewer {
