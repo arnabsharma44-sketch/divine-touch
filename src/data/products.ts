@@ -12,7 +12,8 @@ export interface Product {
   slug: string;
   category: ProductCategory;
   price: number | null;
-  specs: string[];
+  features?: string[];
+  specifications?: string[];
   description?: string;
   images: ProductImage[];
   featured?: boolean;
@@ -29,11 +30,18 @@ export const products: Product[] = [
     slug: "amb-007-b",
     category: "massage-chairs",
     price: null,
-    specs: [
+    features: [
       "Full body massage with zero gravity recline",
       "Multiple massage modes and intensity levels",
       "Built-in heat therapy system",
       "Bluetooth speaker integration",
+    ],
+    // 👇 ADD YOUR SPECIFICATIONS HERE 👇
+    specifications: [
+      "Dimensions: 150cm x 80cm x 120cm",
+      "Weight: 110 kg",
+      "Power Consumption: 220W",
+      "Warranty: 2 Years"
     ],
     description:
       "Experience complete relaxation with the AMB 007 B premium massage chair. Designed for full-body comfort with advanced massage technology.",
@@ -62,7 +70,7 @@ export const products: Product[] = [
     slug: "am-006-b",
     category: "massage-chairs",
     price: null,
-    specs: [
+    features: [
       "Advanced 3D massage technology",
       "Zero gravity positioning",
       "Full body air compression",
@@ -95,7 +103,7 @@ export const products: Product[] = [
     slug: "am-009",
     category: "massage-chairs",
     price: null,
-    specs: [
+    features: [
       "SL-track massage system",
       "Foot roller reflexology",
       "Auto body scan technology",
@@ -128,7 +136,7 @@ export const products: Product[] = [
     slug: "am-444-n",
     category: "massage-chairs",
     price: null,
-    specs: [
+    features: [
       "4D massage mechanism",
       "Voice control enabled",
       "Calf and foot massage",
@@ -161,7 +169,7 @@ export const products: Product[] = [
     slug: "am-888",
     category: "massage-chairs",
     price: null,
-    specs: [
+    features: [
       "Premium full body massage chair",
       "Multiple airbag compression zones",
       "Infrared heating therapy",
@@ -194,7 +202,7 @@ export const products: Product[] = [
     slug: "am-333",
     category: "massage-chairs",
     price: null,
-    specs: [
+    features: [
       "Compact design for home and office",
       "Shiatsu and kneading massage",
       "Adjustable recline angles",
@@ -227,7 +235,7 @@ export const products: Product[] = [
     slug: "am-6666",
     category: "massage-chairs",
     price: null,
-    specs: [
+    features: [
       "Flagship luxury massage chair",
       "Dual-core massage engine",
       "Full body stretch function",
@@ -264,7 +272,7 @@ export const products: Product[] = [
     slug: "sample-leg-massager",
     category: "leg-massagers",
     price: null,
-    specs: [
+    features: [
       "Air compression leg massage",
       "Adjustable intensity levels",
       "Heat therapy function",
@@ -285,7 +293,7 @@ export const products: Product[] = [
     slug: "sample-back-massager",
     category: "other-massage-products",
     price: null,
-    specs: [
+    features: [
       "Deep tissue back massage",
       "Multiple vibration modes",
       "Ergonomic design",
@@ -310,7 +318,7 @@ export const products: Product[] = [
     slug: "sample-foot-massager",
     category: "foot-massagers",
     price: null,
-    specs: [
+    features: [
       "Deep kneading foot rollers",
       "Shiatsu pressure points",
       "Adjustable heat settings",
@@ -331,7 +339,7 @@ export const products: Product[] = [
     slug: "sample-neck-massager",
     category: "other-massage-products",
     price: null,
-    specs: [
+    features: [
       "Ergonomic neck wrap",
       "Heat therapy",
       "Vibration and rolling massage",
@@ -356,7 +364,7 @@ export const products: Product[] = [
     slug: "sample-scalp-massager-1",
     category: "scalp-massagers",
     price: null,
-    specs: [
+    features: [
       "Electric scalp massage",
       "Multiple massage heads",
       "Cordless rechargeable",
@@ -377,7 +385,7 @@ export const products: Product[] = [
     slug: "sample-eye-massager",
     category: "scalp-massagers",
     price: null,
-    specs: [
+    features: [
       "Vibrating eye massager",
       "Promotes blood circulation",
       "Lightweight ergonomic design",

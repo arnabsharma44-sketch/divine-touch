@@ -53,12 +53,12 @@ export default function ProductCard({ product }: ProductCardProps) {
           </h3>
         </Link>
 
-        {/* Specs */}
+        {/* Features */}
         <ul className="mt-3 space-y-1.5 flex-1">
-          {product.specs.slice(0, 3).map((spec, i) => (
+          {(product.features || []).slice(0, 3).map((feature, i) => (
             <li key={i} className="flex items-start gap-2 text-sm text-brown-500">
               <span className="w-1.5 h-1.5 rounded-full bg-gold-400 shrink-0 mt-1.5" />
-              {spec}
+              {feature}
             </li>
           ))}
         </ul>

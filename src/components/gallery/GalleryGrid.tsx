@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import FadeContent from "@/components/shared/FadeContent";
 import { products } from "@/data/products";
 
@@ -88,10 +89,12 @@ export default function GalleryGrid() {
                 onClick={() => setSelectedImage(item.image)}
               >
                 <div className="absolute inset-0 bg-brown-900/20 group-hover:bg-brown-900/40 transition-colors duration-300 z-10" />
-                <img
+                <Image
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute bottom-0 left-0 w-full p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-20">
                   <span className="text-xs font-bold uppercase tracking-wider mb-1 block" style={{ color: "#F59E0B" }}>
@@ -122,13 +125,14 @@ export default function GalleryGrid() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative max-w-5xl w-full max-h-[90vh] rounded-2xl overflow-hidden"
+              className="relative max-w-5xl w-full h-[70vh] md:h-[85vh] rounded-2xl overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
-              <img
+              <Image
                 src={selectedImage}
                 alt="Enlarged view"
-                className="w-full h-full object-contain"
+                fill
+                className="object-contain"
               />
               <button
                 onClick={() => setSelectedImage(null)}

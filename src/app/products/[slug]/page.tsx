@@ -75,7 +75,7 @@ export default async function ProductDetailPage({
             {/* Right: Product Info */}
             <div className="pt-2">
               <ProductInfo product={product} />
-              <SpecTable specs={product.specs} />
+              <SpecTable features={product.features} specifications={product.specifications} />
             </div>
           </div>
         </div>
