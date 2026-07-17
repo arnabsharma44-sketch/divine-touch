@@ -10,7 +10,7 @@ export default function ProductCarousel() {
   const glassItems: GlassItem[] = featured.map(p => ({
     image: p.images[0]?.src || "",
     label: p.name,
-    href: `/products/${p.id}`,
+    href: `/products/${p.slug}`,
     color: "gold"
   }));
 

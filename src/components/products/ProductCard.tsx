@@ -23,7 +23,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       animated={false}
       className="h-full"
     >
-      <div className="group bg-white rounded-2xl overflow-hidden flex flex-col h-full h-[calc(100%-2px)]">
+      <div className="group bg-white rounded-2xl overflow-hidden flex flex-col h-[calc(100%-2px)]">
       {/* Image */}
       <Link href={`/products/${product.slug}`} className="block relative overflow-hidden">
         <ImagePlaceholder

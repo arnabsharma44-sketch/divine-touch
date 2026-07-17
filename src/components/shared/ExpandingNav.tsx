@@ -5,7 +5,17 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
-export default function ExpandingNav({ items, activeHref }: any) {
+interface NavItem {
+  href: string;
+  label: string;
+}
+
+interface ExpandingNavProps {
+  items: NavItem[];
+  activeHref: string;
+}
+
+export default function ExpandingNav({ items, activeHref }: ExpandingNavProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
@@ -45,7 +55,7 @@ export default function ExpandingNav({ items, activeHref }: any) {
               exit={{ opacity: 0, width: 0, paddingRight: 0 }}
               className="flex items-center gap-4 sm:gap-6 whitespace-nowrap overflow-hidden ml-2"
             >
-              {items.map((item: any) => {
+              {items.map((item: NavItem) => {
                 const isActive = activeHref === item.href;
                 return (
                   <Link

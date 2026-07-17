@@ -11,7 +11,6 @@ export default function Template({ children }: { children: React.ReactNode }) {
         type: "spring",
         stiffness: 260,
         damping: 20,
-        duration: 0.6 
       }}
       className="w-full h-full"
     >
