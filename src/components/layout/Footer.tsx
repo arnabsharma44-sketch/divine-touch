@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, MessageCircle, Mail, MapPin, Clock } from "lucide-react";
 import { BRAND, CONTACT, DEVELOPER, CATEGORIES } from "@/lib/constants";
 import { getDefaultWhatsAppUrl } from "@/lib/whatsapp";
@@ -31,7 +32,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-4 mb-4">
               <div className="w-24 h-24 rounded-full bg-white shrink-0 flex items-center justify-center shadow-md border border-brown-700/50">
-                <img src="/images/logo.png" alt="Divine Touch Logo" className="w-[90%] h-[90%] object-contain rounded-full" />
+                <Image src="/images/logo.png" width={96} height={96} alt="Divine Touch Logo" className="w-[90%] h-[90%] object-contain rounded-full" />
               </div>
               <div>
                 <h3 className="font-heading font-bold text-xl" style={{ color: "#FE7F2D" }}>Divine Touch</h3>
@@ -47,15 +48,12 @@ export default function Footer() {
             <div className="flex items-center gap-3 mt-6">
               {[
                 { icon: SocialIcons.Instagram, label: "Instagram", url: CONTACT.instagram },
-                { icon: SocialIcons.Facebook, label: "Facebook", url: "#" },
-                { icon: SocialIcons.Youtube, label: "YouTube", url: "#" },
-                { icon: SocialIcons.Twitter, label: "Twitter", url: "#" },
               ].map(({ icon: Icon, label, url }) => (
                 <a
                   key={label}
                   href={url}
-                  target={url !== "#" ? "_blank" : undefined}
-                  rel={url !== "#" ? "noopener noreferrer" : undefined}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className="w-9 h-9 rounded-full border border-brown-700 flex items-center justify-center text-brown-300 hover:border-gold-500 hover:text-gold-400 transition-all duration-300 hover:scale-110"
                 >
@@ -137,7 +135,7 @@ export default function Footer() {
               </div>
               <div className="flex items-start gap-2.5 text-sm text-brown-300">
                 <Clock className="w-4 h-4 shrink-0 mt-0.5" />
-                <span>Working Hours: 10:00 AM – 9:00 PM</span>
+                <span>Mon – Sat: 10:00 AM – 8:00 PM<br/>Sunday: Closed</span>
               </div>
               <a
                 href={getDefaultWhatsAppUrl()}

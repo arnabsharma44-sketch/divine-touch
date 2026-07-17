@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import dynamic from "next/dynamic";
+import Image from "next/image";
 import SectionReveal from "@/components/shared/SectionReveal";
 
 import Stack from "@/components/shared/Stack";
@@ -39,6 +39,13 @@ export default function ReviewsPage() {
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
+      if (file.size > 5 * 1024 * 1024) {
+        alert("Image must be under 5 MB.");
+        return;
+      }
+      if (newReview.image) {
+        URL.revokeObjectURL(newReview.image);
+      }
       const imageUrl = URL.createObjectURL(file);
       setNewReview({ ...newReview, image: imageUrl });
     }
@@ -48,10 +55,13 @@ export default function ReviewsPage() {
     <div key={i} className="w-full h-full bg-white rounded-3xl shadow-xl shadow-brown-900/10 border-2 border-cream-100 flex flex-col sm:flex-row overflow-hidden group">
       {/* Image Section - Top on mobile, Left on desktop */}
       <div className="w-full sm:w-[40%] h-[200px] sm:h-full relative overflow-hidden shrink-0">
-        <img
+        <Image
           src={review.image}
           alt={review.name}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          fill
+          sizes="(max-width: 640px) 100vw, 40vw"
+          unoptimized={review.image.startsWith("blob:")}
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-80 sm:hidden" />
       </div>

@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import SectionReveal from "@/components/shared/SectionReveal";
 
 const initialTestimonials = [
@@ -64,10 +65,33 @@ export default function TestimonialsSection() {
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
+      // M-6: Enforce 5MB max file size
+      if (file.size > 5 * 1024 * 1024) {
+        alert("Image must be under 5 MB.");
+        return;
+      }
+      // Revoke previous object URL to prevent memory leak
+      if (newReview.image) {
+        URL.revokeObjectURL(newReview.image);
+      }
       const imageUrl = URL.createObjectURL(file);
       setNewReview({ ...newReview, image: imageUrl });
     }
   };
+
+  const handleNext = useCallback(() => {
+    setDirection(1);
+    setCurrentIndex((prevIndex) =>
+      prevIndex === testimonialsList.length - 1 ? 0 : prevIndex + 1
+    );
+  }, [testimonialsList.length]);
+
+  const handlePrev = useCallback(() => {
+    setDirection(-1);
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? testimonialsList.length - 1 : prevIndex - 1
+    );
+  }, [testimonialsList.length]);
 
   useEffect(() => {
     if (showForm) return;
@@ -75,21 +99,7 @@ export default function TestimonialsSection() {
       handleNext();
     }, 5000);
     return () => clearInterval(timer);
-  }, [currentIndex, showForm, testimonialsList.length]);
-
-  const handleNext = () => {
-    setDirection(1);
-    setCurrentIndex((prevIndex) =>
-      prevIndex === testimonialsList.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const handlePrev = () => {
-    setDirection(-1);
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? testimonialsList.length - 1 : prevIndex - 1
-    );
-  };
+  }, [showForm, handleNext]);
 
   const variants = {
     enter: (direction: number) => {
@@ -152,10 +162,13 @@ export default function TestimonialsSection() {
                 
                 {/* Image Section - Left on Desktop, Top on Mobile */}
                 <div className="w-full md:w-[40%] h-[250px] md:h-full relative overflow-hidden shrink-0">
-                  <img
+                  <Image
                     src={testimonialsList[currentIndex].image}
                     alt={testimonialsList[currentIndex].name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 40vw"
+                    unoptimized={testimonialsList[currentIndex].image.startsWith("blob:")}
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-80 md:hidden" />
                 </div>

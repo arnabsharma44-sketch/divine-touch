@@ -1,6 +1,8 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import Link from "next/link";
+import Image from "next/image";
 import WhatsappIcon from "@/components/shared/WhatsappIcon";
 import { getDefaultWhatsAppUrl } from "@/lib/whatsapp";
 import ExpandingNav from "@/components/shared/ExpandingNav";
@@ -28,19 +30,21 @@ export default function Navbar() {
 
         {/* Center: Logo + Name (Highlighted) */}
         <div className="absolute left-1/2 -translate-x-1/2 z-40 pointer-events-auto flex items-center justify-center group">
-          <a href="/" className="flex items-center gap-2 sm:gap-3">
+          <Link href="/" className="flex items-center gap-2 sm:gap-3">
             <div className="relative flex-shrink-0">
               <div className="absolute inset-0 bg-gold-400 rounded-full blur-md opacity-20 group-hover:opacity-40 transition-opacity duration-300 scale-105" />
-              <img 
+              <Image 
                 src="/images/logo.png" 
-                alt="Divine Touch Logo" 
+                alt="Divine Touch Logo"
+                width={96}
+                height={96}
                 className="relative h-14 w-14 sm:h-16 sm:w-16 lg:h-24 lg:w-24 rounded-full object-contain transition-transform duration-300 group-hover:scale-105 mix-blend-multiply" 
               />
             </div>
             <span className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl hidden lg:block tracking-tight bg-gradient-to-r from-gold-600 via-[#FE7F2D] to-gold-500 bg-clip-text text-transparent drop-shadow-sm transition-all duration-300 group-hover:brightness-110 whitespace-nowrap">
               Divine Touch
             </span>
-          </a>
+          </Link>
         </div>
         
         {/* Right: WhatsApp Button */}

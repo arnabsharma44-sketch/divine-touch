@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Camera } from "lucide-react";
+import Image from "next/image";
 
 interface CircularMediaProps {
   label: string;
@@ -30,7 +31,7 @@ export default function CircularMedia({
       } ${sizeClass} ${className}`}
     >
       {src ? (
-        <img src={src} alt={label} className="w-full h-full object-cover" />
+        <Image src={src} alt={label} fill sizes="(max-width: 768px) 96px, 160px" className="object-cover" />
       ) : (
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5 p-2 text-center opacity-70">
           <Camera className="w-6 h-6 text-gold-400 shrink-0" />

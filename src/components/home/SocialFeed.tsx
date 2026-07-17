@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Play } from "lucide-react";
+import Image from "next/image";
 import SectionReveal from "@/components/shared/SectionReveal";
 import FadeContent from "@/components/shared/FadeContent";
 import { CONTACT } from "@/lib/constants";
@@ -86,9 +87,11 @@ export default function SocialFeed() {
                   <InstagramIcon className="w-6 h-6 text-white drop-shadow-md" />
                 </div>
 
-                <img
+                <Image
                   src={reel.thumbnail}
                   alt={`Divine Touch Reel ${reel.id}`}
+                  width={400}
+                  height={711}
                   className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
                 />
               </a>

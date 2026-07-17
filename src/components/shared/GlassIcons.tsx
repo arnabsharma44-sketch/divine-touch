@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export interface GlassItem {
   icon?: React.ReactNode;
@@ -54,8 +55,8 @@ export default function GlassIcons({ items, className = "", colorful = false }: 
             `}
           >
             {item.image ? (
-              <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden mb-4 border-4 border-white/60 shadow-inner bg-cream-100 flex items-center justify-center shrink-0">
-                <img src={item.image} alt={item.label} className="w-full h-full object-cover" />
+              <div className="relative w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden mb-4 border-4 border-white/60 shadow-inner bg-cream-100 flex items-center justify-center shrink-0">
+                <Image src={item.image} alt={item.label} fill sizes="(max-width: 768px) 96px, 128px" className="object-cover" />
               </div>
             ) : (
               <div className={`text-4xl mb-4 ${colorful && item.color ? `text-${item.color}-500` : "text-brown-700"}`}>
